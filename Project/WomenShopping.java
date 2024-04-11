@@ -1,13 +1,18 @@
 package Project;
 
+import com.google.common.base.FinalizableReferenceQueue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
-public class WomenShopping {
-    public static void main(String[] args) throws InterruptedException {
+public class WomenShopping
+{
+
+    @Test(priority = 0)
+    public  void Women() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://magento.softwaretestingboard.com/");
@@ -29,18 +34,16 @@ public class WomenShopping {
         driver.findElement(By.xpath("//a[contains(@href, 'https://magento.softwaretestingboard.com/checkout/cart/')]")).click();
         Thread.sleep(5000);
 
-       //Check weather item is added or not
+        //Check weather item is added or not
 
         WebElement sentenceElement = driver.findElement(By.xpath("//*[@id=\"top-cart-btn-checkout\"]"));
         String sentence = sentenceElement.getText();
         System.out.println("This sentence is to verify" + " " + sentence);
-        if (sentence.contains("Proceed to Checkout"))
-        {
+        if (sentence.contains("Proceed to Checkout")) {
             System.out.println("Adding to cart is succesfull");
-        }
-        else
-        {
+        } else {
             System.out.println("Adding to cart is failed");
         }
+        driver.quit();
     }
 }

@@ -45,7 +45,7 @@ public class LumaPage
     }
 
     //TC-2 Signing in and verifying Homepage
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void SigninAndVerify()
     {
         driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();

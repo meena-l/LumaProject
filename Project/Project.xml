@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="Project">
+        <classes>
+            <class name ="Project.LumaPage"/>
+            <class name = "Project.WomenShopping"/>
+            <class name = "Project.CheckCart"/>
+            <class name ="Project.MenShopping"/>
+            <class name ="Project.SearchBar"/>
+            <class name ="Project.SignIn"/>
+            <class name ="Project.IncorrectCredentials"/>
+            <class name ="Project.CheckOut"/>
+            <class name ="Project.RemoveItem"/>
+        </classes>
+    </test>
+</suite>
