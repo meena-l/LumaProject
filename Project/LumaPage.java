@@ -16,7 +16,8 @@ public class LumaPage
     WebDriver driver = null;
 
     @BeforeMethod
-    public void precondition() {
+    public void precondition()
+    {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://magento.softwaretestingboard.com/");
@@ -45,7 +46,8 @@ public class LumaPage
 
     //TC-2 Signing in and verifying Homepage
     @Test(priority = 1)
-    public void SigninAndVerify() {
+    public void SigninAndVerify()
+    {
         driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
         driver.findElement(By.id("email")).sendKeys("meena.laxman@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("Selenium1234");
