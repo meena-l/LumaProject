@@ -6,10 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+import java.time.Instant;
 
 public class CheckOut
 {
@@ -22,9 +27,19 @@ public void precondition()
     driver.get("https://magento.softwaretestingboard.com/");
 
 }
+
 @Test(priority = 0)
+public void login()
+{
+    driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
+    driver.findElement(By.id("email")).sendKeys("meena.laxman@gmail.com");
+    driver.findElement(By.id("pass")).sendKeys("Selenium1234");
+    driver.findElement(By.xpath("//*[@id=\"send2\"]/span")).click();
+}
+@Test(priority = 1)
 public void ShoppingMen() throws InterruptedException
 {
+
     Actions action = new Actions(driver);
     WebElement Men = driver.findElement(By.xpath("//span[text()='Men']"));
     action.moveToElement(Men).perform();
@@ -40,13 +55,16 @@ public void ShoppingMen() throws InterruptedException
     driver.findElement(By.xpath("//a[contains(@href, 'https://magento.softwaretestingboard.com/checkout/cart/')]")).click();
     Thread.sleep(6000);
 
-    driver.findElement(By.xpath("/html/body/div[2]/header/div[2]/div[1]/a")).click();
+    driver.findElement(By.xpath("(//span[@class='counter qty'])[1]")).click();
+
+    driver.findElement(By.xpath("//span[text()='Proceed to Checkout']")).click();
 
 
-    WebElement Add_Cart = driver.findElement(By.id("top-cart-btn-checkout"));
-    action.moveToElement(Add_Cart).click().perform();
+    //driver.findElement(By.xpath("//span[text()='View and Edit Cart']")).click();
 
+    //Checking out
 
+    Thread.sleep(3000);
     driver.findElement(By.name("username")).sendKeys("meena.l@gmail.com");
     driver.findElement(By.name("firstname")).sendKeys("Meena");
     driver.findElement(By.name("lastname")).sendKeys("L");

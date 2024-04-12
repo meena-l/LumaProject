@@ -12,6 +12,13 @@
             <class name ="Project.IncorrectCredentials"/>
             <class name ="Project.CheckOut"/>
             <class name ="Project.RemoveItem"/>
+            <class name ="Project.SearchBar"/>
+            <class name ="Project.AddAddress"/>
+            <class name ="Project.Favourite"/>
+            <class name ="Project.GetIframes"/>
+            <class name ="Project.ScrollDownUp"/>
+            <class name ="Project.ScreenS"/>
+
         </classes>
     </test>
 </suite>
