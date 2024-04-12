@@ -57,7 +57,8 @@ public void ShoppingMen() throws InterruptedException
 
     driver.findElement(By.xpath("(//span[@class='counter qty'])[1]")).click();
 
-    driver.findElement(By.xpath("//span[text()='Proceed to Checkout']")).click();
+    WebElement CheckoutButton=driver.findElement(By.id("top-cart-btn-checkout"));
+    CheckoutButton.click();
 
 
     //driver.findElement(By.xpath("//span[text()='View and Edit Cart']")).click();
