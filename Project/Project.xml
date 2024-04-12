@@ -18,7 +18,9 @@
             <class name ="Project.GetIframes"/>
             <class name ="Project.ScrollDownUp"/>
             <class name ="Project.ScreenS"/>
-
+            <class name ="Project.BagsShopping"/>
+            <class name ="Project.Review"/>
+            
         </classes>
     </test>
 </suite>
