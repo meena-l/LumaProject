@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="Project2">
+        <classes>
+            <class name ="Project2.UserRegistration"/>
+            <class name = "Project2.Login_User"/>
+            <class name = "Project2.AddProducts"/>
+            <class name ="Project2.Place_Order"/>
+            <class name ="Project2.Remove_Products"/>
+            <class name ="Project2.Add_Review"/>
+            <class name ="Project2.Contact_Us"/>
+            <class name ="Project2.Search"/>
+            <class name ="Project2.View_Product"/>
+            <class name ="Project2.Scroll_down_withoutarrow"/>
+            <class name ="Project2.Scrolldown_using_arrow"/>
+            <class name ="Project2.TestCases_Page"/>
+            <class name="Project2.Logout">
+
+            </class>
+        </classes>
+    </test>
+</suite>
