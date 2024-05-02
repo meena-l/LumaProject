@@ -35,8 +35,8 @@ public class View_Product
 
         Assert.assertEquals(title, "ALL PRODUCTS");
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3500)", "");
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollBy(0,3500)", "");
 
 
         driver.findElement(By.xpath("//a[@href='/product_details/14']")).click();

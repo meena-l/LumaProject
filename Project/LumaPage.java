@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class LumaPage
@@ -48,10 +50,15 @@ public class LumaPage
     @Test(priority = 2)
     public void SigninAndVerify()
     {
-        driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
-        driver.findElement(By.id("email")).sendKeys("meena.laxman@gmail.com");
-        driver.findElement(By.id("pass")).sendKeys("Selenium1234");
-        driver.findElement(By.xpath("//*[@id=\"send2\"]/span")).click();
+        driver.findElement(By.linkText("Sign In")).click();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+        TestBase signin = new TestBase(driver);
+
+        signin.enterUsername("meena.laxman@gmail.com");
+        signin.enterPassword("Selenium1234");
+        signin.clickLoginButton();
+
         //Verifying Home Page
         String Title = driver.getTitle();
         System.out.println(Title);

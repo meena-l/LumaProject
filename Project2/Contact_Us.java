@@ -25,6 +25,7 @@ public class Contact_Us
         js.executeScript("window.alert = function(){};");
 
         driver.findElement(By.cssSelector(".fa.fa-envelope")).click();
+
         driver.findElement(By.cssSelector("input[name='name']")).sendKeys("Meena.L");
         driver.findElement(By.cssSelector("input[name='email']")).sendKeys("meena123@gmail.com");
         driver.findElement(By.cssSelector("input[name='subject']")).sendKeys("Password ");

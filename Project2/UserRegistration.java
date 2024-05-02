@@ -1,5 +1,6 @@
 package Project2;
 
+import Project.SignIn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,11 +20,16 @@ public class UserRegistration {
         js.executeScript("window.alert = function(){};");
 
         driver.findElement(By.linkText("Signup / Login")).click();
-        driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("Meena_L");
-        driver.findElement(By.xpath("//input[ @data-qa='signup-email']")).sendKeys("meena1234@gmail.com");
-        driver.findElement(By.xpath("//button[text()=\"Signup\"]")).click();
-        //driver.findElement(By.cssSelector("#id_gender2")).click();
+
+        Test_Data signup = new Test_Data(driver);
+
+        signup.Username("Meena_L");
+        signup.email("meena12345@gmail.com");
+        signup.password("ABCD123");
+        signup.signUpButton();
+
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("ABCD123");
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement dropdownDays = driver.findElement(By.xpath("//select[@id='days']"));

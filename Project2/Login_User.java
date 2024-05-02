@@ -27,6 +27,7 @@ public class Login_User
     public void LoginwithValidCredentials()
     {
         driver.findElement(By.linkText("Signup / Login")).click();
+
         driver.findElement(By.cssSelector("input[name='email']:nth-child(2)")).sendKeys("meena1234@gmail.com");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("ABCD123");
         driver.findElement(By.xpath("//*[text()='Login']")).click();
